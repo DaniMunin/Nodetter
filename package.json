@@ -15,5 +15,6 @@
   "bugs": {
     "url": "https://github.com/DaniMunin/Nodetter/issues"
   },
-  "homepage": "https://github.com/DaniMunin/Nodetter#readme"
+  "homepage": "https://github.com/DaniMunin/Nodetter#readme",
+  "dependencies": {}
 }
