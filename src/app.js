@@ -1,18 +1,13 @@
-const http = require('http');
+const express = require('express');
+const app = express();
+var bodyParser = require('body-parser');
+app.use(bodyParser.text());
 
-http.createServer((request, response) => {
-    request.on('error', (err) => {
-    console.error(err);
-response.statusCode = 400;
-response.end();
-});
-response.on('error', (err) => {
-    console.error(err);
-});
-if (request.method === 'GET' && request.url === '/echo') {
-    response.end(request.method + request.url);
-} else {
-    response.statusCode = 404;
-    response.end();
-}
-}).listen(8080);
+
+app.post('/', function (req, res) {
+    res.send(req.body);
+})
+
+app.listen(3000, function () {
+
+})
