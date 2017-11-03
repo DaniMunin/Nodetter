@@ -1,17 +1,11 @@
 const express = require('express');
 const app = express();
 const port = 3000;
+const callbacks = require("./index.js");
 var bodyParser = require('body-parser');
 app.use(bodyParser.text());
 
-function echo(req,res){
-    res.send(req.body);
-};
-
-app.post('/echo', echo);
+app.post('/echo', callbacks);
 app.listen(port);
 
-
-console.log('Listening on port: ' +  port);
-
-
+console.log("Server running in port: " + port);
